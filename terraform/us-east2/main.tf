@@ -1,13 +1,13 @@
 module "tfstate" {
   source = "../modules/s3"
 
-  name = var.bucket
+  bucket_name = var.bucket_name
   acl = "private"
 }
 
 module "static_bucket" {
   source = "../modules/s3_static"
 
-  name = var.bucket
+  bucket_name = "ey-resume"
   acl = "public-read"
 }
