@@ -9,4 +9,8 @@ resource "aws_s3_bucket_website_configuration" "this" {
   index_document {
     suffix = "index.html"
   }
+
+  # error_document {
+  #   error.html
+  # }
 }
