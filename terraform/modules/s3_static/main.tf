@@ -6,10 +6,6 @@ resource "aws_s3_bucket" "this" {
 resource "aws_s3_bucket_acl" "this" {
   bucket = aws_s3_bucket.this.id
   acl = var.acl
-
-# locals {
-#   s3_origin_id = "website"
-#   }
 }
 
 resource "aws_s3_bucket_website_configuration" "this" {
