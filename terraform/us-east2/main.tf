@@ -11,3 +11,9 @@ module "static_bucket" {
   bucket_name = "ey-resume"
   acl = "public-read"
 }
+
+module "cloudfront" {
+  source = "../modules/cloudfront"
+
+  domain_name = module.static_bucket.domain_name
+}
