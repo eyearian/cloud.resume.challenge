@@ -6,7 +6,6 @@ resource "aws_route53_record" "www" {
   zone_id = data.aws_route53_zone.website.zone_id
   name = "ericyearian.com"
   type = "A"
-  # ttl = 5
 
   alias {
     name = var.cloudfront_id
