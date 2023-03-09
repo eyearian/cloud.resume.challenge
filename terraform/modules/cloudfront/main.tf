@@ -22,6 +22,7 @@ resource "aws_cloudfront_distribution" "this" {
     comment             = "website"
     default_root_object = "index.html"
   
+  aliases = ["ericyearian.com"]
 
   default_cache_behavior {
     allowed_methods  = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]

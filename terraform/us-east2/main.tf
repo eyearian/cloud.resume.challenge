@@ -26,3 +26,10 @@ module "acm_cert" {
     aws.acm = aws.acm
    }
 }
+
+module "r53" {
+  source = "../modules/route53"
+
+  cloudfront_id = module.cloudfront.cloudfront_id
+  cloudfront_zone = module.cloudfront.cloudfront_zone
+}

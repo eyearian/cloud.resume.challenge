@@ -1,14 +1,16 @@
-# data "aws_route53_zone" "website" {
-# }
-
-resource "aws_route53_zone" "website" {
+data "aws_route53_zone" "website" {
   name = "ericyearian.com"
 }
 
-# resource "aws_route53_record" "www" {
-#   zone_id = aws_route53_zone.website.zone_id
-#   name = "ericyearian.com"
-#   type = "NS"
-#   ttl = 5
-#   records = aws_route53_zone.website.name_servers
-# }
+resource "aws_route53_record" "www" {
+  zone_id = data.aws_route53_zone.website.zone_id
+  name = "ericyearian.com"
+  type = "A"
+  # ttl = 5
+
+  alias {
+    name = var.cloudfront_id
+    zone_id = var.cloudfront_zone
+    evaluate_target_health = false
+  }
+}
