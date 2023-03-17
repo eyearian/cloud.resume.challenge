@@ -33,3 +33,15 @@ module "r53" {
   cloudfront_id = module.cloudfront.cloudfront_id
   cloudfront_zone = module.cloudfront.cloudfront_zone
 }
+
+module "website_table" {
+  source = "../modules/dynamo"
+
+  table_name = "visit_count"
+}
+
+# module "apigateway" {
+#   source = "../modules/apigateway"
+
+#   apigateway_name = "website"
+# }
