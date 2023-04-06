@@ -40,8 +40,14 @@ module "website_table" {
   table_name = "visit_count"
 }
 
-# module "apigateway" {
-#   source = "../modules/apigateway"
+module "apigateway" {
+  source = "../modules/apigateway"
 
-#   apigateway_name = "website"
-# }
+  apigateway_name = "dynamo_lambda_api"
+  invoke_arn = module.lambda.invoke_arn
+  function_name = module.lambda.function_name
+}
+
+module "lambda" {
+  source = "../modules/lambda"
+}

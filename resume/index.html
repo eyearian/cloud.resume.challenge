@@ -55,3 +55,27 @@
       <div class="website-counter"></div>
     </body>
    </html>
+
+
+       <footer>
+        <div class="footer__link">
+            <p class="counter"> Visitors count: </p>
+            <p id ="body"></p>
+            
+            <script type = "text/javascript">
+              var apiUrl = "https://tnz7fm9m42.execute-api.us-east-2.amazonaws.com/prod/dynamo_lambda";
+                fetch(apiUrl)
+                .then(response => response.json())
+                .then(data =>{
+              var count = document.getElementById('body');
+              count.innerHTML = data.body;
+              console.log(data)});
+            </script>
+          </div>
+        
+    </footer>
+
+    <script src="script.js"></script>
+    
+</body>
+</script>

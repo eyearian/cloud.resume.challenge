@@ -1,14 +1,21 @@
-let counterContainer = document.querySelector(".website-counter");
-let visitCount = localStorage.getItem('page_view');
+// let counterContainer = document.querySelector(".website-counter");
+// let visitCount = localStorage.getItem('page_view');
 
-visitCount = 0;
+let counterContainer = document.getElementById(".website-counter");
 
-// Check if page_view entry is present
-if (visitCount) {
-    visitCount = Number(visitCount) + 1;
-    localStorage.setItem("page_view", visitCount);
-  } else {
-    visitCount = 1;
-    localStorage.setItem("page_view", 1);
-  }
-  counterContainer.innerHTML = visitCount;
+const api = 'https://tnz7fm9m42.execute-api.us-east-2.amazonaws.com/prod/dynamo_lambda';
+
+// function invoke(){
+fetch(api)
+.then((response) => response.json())
+.then((data) => console.log(data));
+
+// }
+
+// function getCount(){
+
+// }
+// return data;
+
+  // counterContainer.innerHTML = visitCount
+  // Need to point the result to an html element
