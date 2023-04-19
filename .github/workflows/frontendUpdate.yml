@@ -1,10 +1,11 @@
 on:
-  push:
+  pull_request:
     paths:
-      - 'resume/app.js'
+      - 'resume/index.html'
+
 
 jobs:
-  jsUpdate:
+  htmlUpdate:
     runs-on: ubuntu-latest
     env: 
       S3_RESUME: ${{ secrets.S3_RESUME }}
@@ -19,6 +20,14 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-2
 
-      - name: Upload .js file
+      - name: Upload html file
+        run: |
+          aws s3 cp ./resume/index.html s3://$S3_RESUME/
+
+      - name: Upload CSS
+        run: |
+          aws s3 cp ./resume/style.css s3://$S3_RESUME/
+
+      - name: Upload CSS
         run: |
           aws s3 cp ./resume/app.js s3://$S3_RESUME/
