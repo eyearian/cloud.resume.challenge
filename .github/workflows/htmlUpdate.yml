@@ -4,7 +4,6 @@ on:
       - 'resume/index.html'
 
 
-
 jobs:
   htmlUpdate:
     runs-on: ubuntu-latest
