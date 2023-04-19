@@ -49,7 +49,7 @@ jobs:
 
       - name: Lambda deploy
         run: |
-          ls && aws lambda update-function-code --function-name dynamo_lambda --zip-file ./counter/dynamo.zip
+          cd counter && aws lambda update-function-code --function-name dynamo_lambda --zip-file dynamo.zip
 
 
 
