@@ -16,12 +16,12 @@ jobs:
       uses: ./.github/workflows/htmlUpdate.yml
       secrets: inherit
 
-# Javascript Update
-  jsUpdate:
-      uses: ./.github/workflows/jsUpdate.yml
-      secrets: inherit
+# # Javascript Update
+#   jsUpdate:
+#       uses: ./.github/workflows/jsUpdate.yml
+#       secrets: inherit
 
-# Lambda Update
-  lambdaUpdate:
-      uses: ./.github/workflows/lambdaUpdate.yml
-      secrets: inherit
+# # Lambda Update
+#   lambdaUpdate:
+#       uses: ./.github/workflows/lambdaUpdate.yml
+#       secrets: inherit
