@@ -1,27 +1,27 @@
-import boto3
+# import boto3
 
-client = boto3.client('dynamodb')
+# client = boto3.client('dynamodb')
 
-def handler(event, context):
-  data = client.get_item( ### this is saying data = dynamodb.getitem
-    TableName='visit_count',
-    Item={
-        'visit_count': {
-          'S': '0'
-        }
-    }
-  )
+# def handler(event, context):
+#   data = client.get_item(
+#     TableName='visit_count',
+#     Item={
+#         'visit_count': {
+#           'S': '0'
+#         }
+#     }
+#   )
 
-  response = {
-      'statusCode': 200,
-      'body': 'successfully created item!',
-      'headers': {
-        'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin': '*'
-      },
-  }
+#   response = {
+#       'statusCode': 200,
+#       'body': 'successfully created item!',
+#       'headers': {
+#         'Content-Type': 'application/json',
+#         'Access-Control-Allow-Origin': '*'
+#       },
+#   }
   
-  return data['Item']['record_count']
+#   return data['Item']['record_count']
 
 
 
