@@ -2,8 +2,8 @@
 
 on:
   push:
-    paths:
-      - 'counter/*'
+    # paths:
+    #   - 'counter/*'
 
 jobs:
   jsUpdate:
