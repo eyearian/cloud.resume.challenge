@@ -7,7 +7,7 @@ jobs:
   jsUpdate:
     runs-on: ubuntu-latest
     env: 
-      S3_RESUME: ${{ secrets.S3_RESUME }}
+      S3_ZIP: ${{ secrets.S3_ZIP }}
     steps:
 
       - uses: actions/checkout@v3
@@ -43,9 +43,13 @@ jobs:
         run: |
           cd counter && zip dynamo.zip ./dynamo_counter.py
 
-      # - name: Lambda deploy
+      # - name: Upload to s3
       #   run: |
-      #     aws lambda update-function-code --function-name dynamo_lambda --s3-bucket $S3_ZIP --s3-key dynamo.zip
+      #     aws s3 cp ./counter/dynamo.zip s3://$S3_ZIP/
+
+      - name: Lambda deploy
+        run: |
+          ls && aws lambda update-function-code --function-name dynamo_lambda --zip-file ./counter/dynamo.zip
 
 
 
