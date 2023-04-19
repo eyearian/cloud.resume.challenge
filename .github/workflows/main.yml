@@ -6,15 +6,15 @@ on:
   push:
     branches:
       - master
-  release:
-    types:
-      - published
+  # release:
+  #   types:
+  #     - published
 
 jobs:
 
   master:
-    if: ${{ github.ref == 'refs/heads/master' }}
-    uses: ./.github/workflows/cliBuild.yml
+    # if: ${{ github.ref == 'refs/heads/master' }}
+    uses: ./.github/workflows/workflows.yml
     secrets:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID_DEV }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY_DEV }}
