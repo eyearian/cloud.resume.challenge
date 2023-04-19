@@ -1,16 +1,24 @@
 name: test action1
 run-name: ${{ github.actor }} is learning GitHub Actions
-on: [push, pull_request]
+on: 
+  push:
+    branches:
+    - master
+  pull_request:
+    branches:
+    - master
 jobs:
-  check-bats-version:
+  htmlUpdate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
         with:
-          node-version: '14'
-      - run: npm install -g bats
-      - run: bats -v
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-2
 
 #test
 #update s3 bucket when new html is pushed
