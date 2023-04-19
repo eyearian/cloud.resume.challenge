@@ -26,10 +26,6 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-2
 
-      - name: ls
-        run: |
-          ls
-
       - name: Upload html file
         run: |
           aws s3 cp ./resume/index.html s3://$S3_RESUME/
