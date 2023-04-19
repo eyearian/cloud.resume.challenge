@@ -5,6 +5,8 @@ on:
   pull_request:
     branches:
     - master
+
+
 jobs:
   htmlUpdate:
     runs-on: ubuntu-latest
@@ -17,4 +19,11 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-2
-          
+
+      - name: ls
+        run: |
+          ls
+
+      - name: Upload html file
+        run: |
+          aws s3 cp ./index.html s3://$S3_RESUME
