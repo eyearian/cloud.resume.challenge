@@ -1,11 +1,11 @@
 on:
   pull_request:
     paths:
-      - 'resume/index.html'
+      - 'resume/*'
 
 
 jobs:
-  htmlUpdate:
+  frontEndUpdate:
     runs-on: ubuntu-latest
     env: 
       S3_RESUME: ${{ secrets.S3_RESUME }}
@@ -23,3 +23,11 @@ jobs:
       - name: Upload html file
         run: |
           aws s3 cp ./resume/index.html s3://$S3_RESUME/
+
+      - name: Upload CSS
+        run: |
+          aws s3 cp ./resume/style.css s3://$S3_RESUME/
+
+      - name: Upload CSS
+        run: |
+          aws s3 cp ./resume/app.js s3://$S3_RESUME/
