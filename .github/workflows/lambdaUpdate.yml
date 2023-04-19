@@ -1,7 +1,7 @@
 on:
-  push:
-    # paths:
-    #   - 'counter/*'
+  pull_request:
+    paths:
+      - 'counter/*'
 
 jobs:
   jsUpdate:
@@ -43,15 +43,6 @@ jobs:
         run: |
           cd counter && zip dynamo.zip ./dynamo_counter.py
 
-      # - name: Upload to s3
-      #   run: |
-      #     aws s3 cp ./counter/dynamo.zip s3://$S3_ZIP/
-
       - name: Lambda deploy
         run: |
           cd counter && aws lambda update-function-code --function-name dynamo_lambda --zip-file fileb://dynamo.zip
-
-
-
-# zip up file
-# deploy to function
