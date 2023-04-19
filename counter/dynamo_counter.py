@@ -15,4 +15,4 @@ def handler(event, context):
             'record_count': record_count
     })
     
-    return "Records added successfully!"
+    return record_count
