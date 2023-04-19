@@ -1,0 +1,21 @@
+name: main call
+
+on:
+  workflow_dispatch:
+
+  push:
+    branches:
+      - master
+  release:
+    types:
+      - published
+
+jobs:
+
+  master:
+    if: ${{ github.ref == 'refs/heads/master' }}
+    uses: ./.github/workflows/cliBuild.yml
+    secrets:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID_DEV }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY_DEV }}
+      S3_RESUME: ${{ secrets.S3_RESUME}}
