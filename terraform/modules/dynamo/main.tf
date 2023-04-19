@@ -14,14 +14,14 @@ resource "aws_dynamodb_table" "website_counter" {
   billing_mode = "PROVISIONED"
   read_capacity = 2
   write_capacity = 2
-  hash_key     = "visit_count"
+  hash_key     = "record_id"
   
   point_in_time_recovery {
     enabled = false
   }
 
   attribute {
-    name = "visit_count"
-    type = "S"
+    name = "record_id"
+    type = "S"  #string
   }
 }

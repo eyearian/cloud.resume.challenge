@@ -1,57 +1,101 @@
-<div id="header"></div>
-<div class="left"></div>
-<div class="stuff">
-  <br><br>
-  <h1>Resume</h1>
-  <h2>Eric</h2>
-  <hr />
-  <br>
-  <p class="head">Job1</p>
-  <ul>
-    <li>null</li>
-    <li>null</li>
-    <li>null</li>
-    <li>null</li>
-  </ul>
-  <p class="head">Skills</p>
-  <ul>
-    <li>Web Design with HTML & CSS</li>
-  </ul>
-  <p class="head">Education</p>
-  <ul>
-    <a href="http://www.wiltonhighschool.org/pages/Wilton_High_School">
-      <li>Wilton High School</li>
-    </a>
-    <!--Link-->
-    <a href="https://www.silvermineart.org/">
-      <li>Silvermine School of Arts</li>
-    </a>
-    <li>Codeacademy</li>
-  </ul>
-  <p class="head">Experience</p>
-  <ul>
-    <li>Student Technology Intern for Wilton School District</li>
-    <li>Babysitter</li>
-  </ul>
-  <p class="head">Extracurriculars</p>
-  <ul>
-    <li>Club</li>
-    <li>Club</li>
-    <li>Club</li>
-  </ul>
-</div>
-<div class="right"></div>
-<div id="footer">
-  <h2 id="name">Eric</h2></div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Eric Yearian's Resume</title>
+  </head>
+<!-- summary -->
+  <body>
+    <header>
+    <h1>Eric Yearian</h1>
+      <h2>847.754.1120 || ericyearian@gmail.com</h2>
+        <p>A Senior DevOps Engineer with experience in the security startup and financial industry working in Operations and Systems Engineering roles. Improving systems and collaborating with developers to continuously improve software.</p>
+    </header>
 
-  <html>
-    <head>
-      <title>Resume</title>
-      <script defer src="app.js"></script>
-      <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-      <div>Website visit count:</div>
-      <div class="website-counter"></div>
-    </body>
-   </html>
+
+
+
+        <!-- qualifications -->
+
+
+        <!-- work experience section -->
+  <div id="experience">
+    <h2>Work Experience</h2>
+      <h3>oak9</h3>
+        <p>DevOps Engineer</p>
+          <ul>
+            <li>Part of a 2 member team brought in to build out DevOps from the ground up and drive multiple greenfield projects.</li>
+            <li>Worked on bringing Kubernetes from POC to production, moving the main containerized .NET app from ECS to EKS.</li>
+            <li>EKS cluster managed via GitOps using ArgoCD, Kustomize and Gomplate for config management</li>
+            <li>Refactored external EKS apps to use helm charts rather than a manual kubesplit process that was prone to
+              error.</li>
+            <li>Rolled out an Elasticsearch logging solution from POC to production, ingesting logs via functionbeat and
+              filebeat, and setting up alerting for various services outside of our EKS cluster.</li>
+            <li>Implemented Prometheus and Grafana to all of our EKS clusters, utilizing Alert Manager and Pagerduty for
+              our incident management playbook</li>
+            <li>Started transition of Jenkins pipelines into Github Actions to remove complexity and decrease build times
+              by using newer more efficient actions and parallel pipelines.</li>
+            <li>Wrote an automated github actions pipeline to build, sign, notarize and publish our cli binary for customer
+              use to free up developers from manually signing, and notarizing our cli multiple times a month.</li>
+            <li>Deployed and refactored many new terraform modules to the organization including introducing a caching
+              later to bypass expensive database calls for all environments.</li>
+            <li>Worked together with the Security team to receive SOC2 certification by implementing proper logging
+              policies and be the DevOps point of contact for any needed materials.</li>
+          </ul>
+
+    <h3>Kenna Security</h3>
+    <p>Systems Engineer</p>
+      <ul>
+        <li>Responsible for maintaining all infrastructure via Ansible and Terraform, supporting an app stack of Rails, Sidekiq, Resque, Elasticsearch, MySQL, and Redis.</li>
+        <li>Implemented cloud solutions as part of a 10 person team across ten multi-cloud environments</li>
+        <li>Configured and deployed four new isolated client production environments, adhering to a strict timeline for
+          each.</li>
+        <li>Developed an automated image build process for CentOS 8 using Packer and Ansible, and migrated this
+          image to all production servers with zero downtime.</li>
+        <li>CentOS 8 image set up for developer’s Vagrant use.</li>
+        <li>Responsible for maintaining monitoring solutions including Datadog and an ELK stack (Elasticsearch,
+          Fluentd, Kibana).</li>
+        <li>Developed a new virtual tunnel for client use, using CentOS 8. Set up an automated pipeline using Packer,
+          Ansible, AWX and GCP to build a client image, and deliver it using AWS S3.</li>
+        <li>Refactored Ansible playbooks, set up dynamic environments and implemented Ansible Vault for legacy
+          infrastructure.</li>
+        <li>Creation of base Docker/Openshift image using Fedora/CentOS.</li>
+        <li>Translated infrastructure creation from Ansible to Terraform for a more stable, predictable infrastructure.</li>
+        <li>Brought audit logs to production for AWS/GCP using new fluentd configs, service accounts, IAM roles, and S3 buckets while embedded on a development team.</li>
+      </ul>
+
+  <h3>Trading Technologies</h3>
+    <p>Global Operations Specialist</p>
+      <ul>
+        <li>Front line operational support as part of a 5 member team for futures exchange trading platform.</li>
+        <li>Consisted of front and back-end production and internal trading systems that consisted of 10 environments
+          and over 3000 globally deployed machines. Global environments spanned 7 co-located data centers and 3
+          AWS regions. Supported 36 separate futures exchanges and a cryptocurrency exchange.</li>
+        <li>Investigate production incidents and outages, resolving the issue with workarounds and bug fixes to ensure
+          a minimum impact on trading and adhere to SLAs.</li>
+        <li>Deployed and monitored 50+ production hotfixes per week. Mid-week hotfixes were deployed within a 45
+          minute patching window</li>
+        <li>Worked with DevOps team to correct and enhance Python tooling related to deployments and Chef</li>
+        <li>Deprecated unused internal environments while re-engineered and deployed QA environment and all of its
+          components to a usable internal environment. This allowed for pre-production integration testing, hotfixes,
+          a more stable production environment, and reduced overall failure rate of deployments by 75%</li>
+        <li>Designed, documented, and performed failover and disaster recovery process for all applications across all
+          AWS and co-located data centers. Dry-runs performed quarterly in the QA environment</li>
+        <li>Executed a global physical to virtual machine initiative. Led to a reduction of infrastructure spend by
+          $4MM/yr</li>
+      </ul>
+  </div>
+
+
+        <!-- website -->
+  <h3>Education</h3>
+    <p>Western Illinois University</p>
+      <p>Bachelor of Science - Information Systems</p>
+        <p>Minor - Busniess Management</p>
+  <div class="website-counter">
+    <script src="app.js"></script>
+    <p>Website visit count:</p>
+
+  </div>      
+
+  </body>
+</html>
