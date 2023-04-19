@@ -41,7 +41,12 @@ jobs:
 
       - name: Zip up .py
         run: |
-          zip counter/dynamo_counter.py dynamo.zip
+          cd counter && zip dynamo_counter.py dynamo.zip
+
+      # - name: Lambda deploy
+      #   run: |
+      #     aws lambda update-function-code --function-name dynamo_lambda --s3-bucket $S3_ZIP --s3-key dynamo.zip
+
 
 
 # zip up file
