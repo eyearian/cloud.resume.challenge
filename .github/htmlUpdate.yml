@@ -12,6 +12,7 @@ jobs:
       - run: npm install -g bats
       - run: bats -v
 
+#test
 #update s3 bucket when new html is pushed
 
 # - name: Checkout repo
