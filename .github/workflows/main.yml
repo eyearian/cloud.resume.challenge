@@ -8,7 +8,7 @@ on:
       - master
   pull_request:
     branches:
-      - master
+    - master
   # release:
   #   types:
   #     - published
@@ -20,5 +20,5 @@ jobs:
     uses: ./.github/workflows/workflows.yml
     secrets:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       S3_RESUME: ${{ secrets.S3_RESUME}}
