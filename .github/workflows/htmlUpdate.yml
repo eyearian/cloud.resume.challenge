@@ -13,6 +13,8 @@ on:
 jobs:
   htmlUpdate:
     runs-on: ubuntu-latest
+    env: 
+      S3_RESUME: ${{ secrets.S3_RESUME }}
     steps:
 
       - uses: actions/checkout@v3
