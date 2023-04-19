@@ -23,3 +23,7 @@ jobs:
       - name: Upload html file
         run: |
           aws s3 cp ./resume/index.html s3://$S3_RESUME/
+
+      - name: Upload CSS
+        run: |
+          aws s3 cp ./resume/style.css s3://$S3_RESUME/

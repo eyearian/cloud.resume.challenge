@@ -1,15 +1,3 @@
-# This should test the javascript that is being updated.
-
-# on:
-#   workflow_call:
-#     secrets:
-#       AWS_ACCESS_KEY_ID:
-#         required: true
-#       AWS_SECRET_ACCESS_KEY:
-#         required: true
-#       S3_RESUME:
-#         required: true
-
 on:
   push:
     paths:
