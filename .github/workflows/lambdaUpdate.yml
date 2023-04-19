@@ -6,8 +6,6 @@ on:
 jobs:
   jsUpdate:
     runs-on: ubuntu-latest
-    env: 
-      S3_ZIP: ${{ secrets.S3_ZIP }}
     steps:
 
       - uses: actions/checkout@v3
