@@ -41,7 +41,7 @@ jobs:
 
       - name: Zip up .py
         run: |
-          cd counter && zip dynamo_counter.py ./dynamo.zip
+          cd counter && zip dynamo.zip ./dynamo_counter.py
 
       # - name: Lambda deploy
       #   run: |
