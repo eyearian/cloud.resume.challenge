@@ -26,7 +26,7 @@ jobs:
 
       - name: Upload CSS
         run: |
-          aws s3 cp ./resume/style.css s3://$S3_RESUME/
+          aws s3 cp ./resume/styles.css s3://$S3_RESUME/
 
       - name: Upload CSS
         run: |

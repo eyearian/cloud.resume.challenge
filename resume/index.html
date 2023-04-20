@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
   <head>
     <title>Eric Yearian's Resume</title>
   </head>
 <!-- summary -->
   <body>
     <header>
-    <h1>Eric Yearian</h1>
-      <h2>ericyearian@gmail.com</h2>
+    <h2><span class="center">Eric Yearian</span></h2>
+      <h3>ericyearian@gmail.com</h3>
         <p>A Senior DevOps Engineer with experience in the security startup and financial industry working in Operations and Systems Engineering roles. Improving systems and collaborating with developers to continuously improve software.</p>
     </header>
 
@@ -15,15 +18,23 @@
 
 
         <!-- qualifications -->
-
+  <div id="qualifications">
+    <h3>Qualifications</h3>
+      <ul>
+        <li><span class="bold">Systems:</span> Terraform, Kubernetes, Ansible, Packer, Vault, Linux (CentOS, Fedora) , Vagrant, AWX, Docker</li>
+        <li><span class="bold">AWS:</span> EKS, ECS S3, RDS, IAM, Route 53, VPC, Elasticache, VPC</li>
+        <li><span class="bold">GCP:</span> Compute Engine, App Engine, Cloud SQL, Cloud DNS, IAM, VPC</li>
+        <li><span class="bold">Monitoring:</span> Grafana, Prometheus, Kibana, Datadog, Fluentd, Splunk, Icinga</li>
+        <li><span class="bold">Software:</span> Github, Github Actions, Gitlab, Okta, CircleCI, Quay, Artifactory, Jira, Jenkins</li>
+      </ul>
+  </div>
 
         <!-- work experience section -->
   <div id="experience">
-    <h2>Work Experience</h2>
-      <h3>oak9</h3>
-        <p>DevOps Engineer</p>
+    <h3>Work Experience</h3>
+      <h3>oak9/<span class="notbold">DevOps Engineer</span><span class="date notbold">July 2021 - Present</span></h3>
           <ul>
-            <li>Part of a 2 member team brought in to build out DevOps from the ground up and drive multiple greenfield projects.</li>
+            <li>Brought in to build out DevOps from the ground up and drive multiple greenfield projects.</li>
             <li>Worked on bringing Kubernetes from POC to production, moving the main containerized .NET app from ECS to EKS.</li>
             <li>EKS cluster managed via GitOps using ArgoCD, Kustomize and Gomplate for config management</li>
             <li>Refactored external EKS apps to use helm charts rather than a manual kubesplit process that was prone to
@@ -42,8 +53,7 @@
               policies and be the DevOps point of contact for any needed materials.</li>
           </ul>
 
-    <h3>Kenna Security</h3>
-    <p>Systems Engineer</p>
+    <h3>Kenna Security/<span class="notbold">Systems Engineer</span><span class="date notbold">April 2019 - May 2021</span></h3>
       <ul>
         <li>Responsible for maintaining all infrastructure via Ansible and Terraform, supporting an app stack of Rails, Sidekiq, Resque, Elasticsearch, MySQL, and Redis.</li>
         <li>Implemented cloud solutions as part of a 10 person team across ten multi-cloud environments</li>
@@ -51,7 +61,7 @@
           each.</li>
         <li>Developed an automated image build process for CentOS 8 using Packer and Ansible, and migrated this
           image to all production servers with zero downtime.</li>
-        <li>CentOS 8 image set up for developer’s Vagrant use.</li>
+        <li>CentOS 8 image set up for developer Vagrant use.</li>
         <li>Responsible for maintaining monitoring solutions including Datadog and an ELK stack (Elasticsearch,
           Fluentd, Kibana).</li>
         <li>Developed a new virtual tunnel for client use, using CentOS 8. Set up an automated pipeline using Packer,
@@ -63,8 +73,7 @@
         <li>Brought audit logs to production for AWS/GCP using new fluentd configs, service accounts, IAM roles, and S3 buckets while embedded on a development team.</li>
       </ul>
 
-  <h3>Trading Technologies</h3>
-    <p>Global Operations Specialist</p>
+  <h3>Trading Technologies/<span class="notbold">Global Operations Specialist</span><span class="date notbold">May 2014 - September 2018</span></h3>
       <ul>
         <li>Front line operational support as part of a 5 member team for futures exchange trading platform.</li>
         <li>Consisted of front and back-end production and internal trading systems that consisted of 10 environments

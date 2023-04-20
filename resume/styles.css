@@ -1,1 +1,22 @@
-/* placeholder */
+/* html * {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 14;
+} */
+
+.notbold{
+  font-weight: normal;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.date {
+  float: right;
+  font-size: 9;
+}
+
+.date.notbold {
+  font-size: 9;
+}
