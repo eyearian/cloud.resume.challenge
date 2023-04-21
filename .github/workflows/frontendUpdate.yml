@@ -31,3 +31,7 @@ jobs:
       - name: Upload CSS
         run: |
           aws s3 cp ./resume/app.js s3://$S3_RESUME/
+# break this out into a new job for when just the .js is updated
+      # - name: Invalidate cloudfront cache
+      #   run: |
+        
