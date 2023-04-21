@@ -4,6 +4,7 @@ This was inspired by the cloud resume challenge and hosts my resume using a mode
 
 This website is put together with the following:
 
+- Terraform to manage all of the infrastructure
 - ACM for certificate management
 - S3 for the static hosting of the website
 - Cloudfront to serve the site
